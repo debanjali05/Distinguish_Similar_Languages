@@ -7,7 +7,7 @@ Created on Fri Aug 14 23:29:56 2020
 Implementation of a classification model to distinguish between similar Languages
 
 Classifier model: hard voting classifier on the ensemble of SVM and Naive Bayes classifiers
-using n-gram (2-4) character level Tfidf feature extractor 
+using n-gram (2-6) character level Tfidf feature extractor 
 """
 
 from utils import lang
