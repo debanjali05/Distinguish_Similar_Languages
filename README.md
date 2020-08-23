@@ -1,7 +1,7 @@
 # Distinguish Similar Languages
 
 Implementation of a method to distinguish between similar languages such as Croatian, Bosnian and Serbian. 
-We implement an ensemble of MLP, SVM and Naive Bayes classifiers using a soft voting classifier along with a character level n-gram (2-6) Tfidf Vectorizer as a feature extractor.
+We implement an ensemble of SVM and Naive Bayes classifiers using a soft voting classifier along with a character level n-gram (2-6) Tfidf Vectorizer as a feature extractor.
 The model predicts the class label based on the argmax of the sums of the predicted probabilities estimated from the 3 classifiers.
 
 ## Dataset
@@ -30,7 +30,7 @@ python language_detection
 ## Output
 | Model   |   Accuracy        |  F1 score |
 |----------|:-------------:|------:|
-| Ensemble |  77.3 % | 0.7675 | 
+| Ensemble |  75.5 % | 0.7562 | 
 
 The confusion matrix generated in this case:
 
