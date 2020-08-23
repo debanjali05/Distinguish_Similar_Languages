@@ -17,8 +17,9 @@ def preprocessing(line):
     """
         data preprocessing step: 
             1) Convert to lowercase
-            2) Remove line number, digits, punctuations and extra spaces
-    
+            2) Remove digits, punctuations and extra spaces
+            3) Returns preprocessed line
+
         line: each sentence from the dataset (string)
     """
     
@@ -34,10 +35,14 @@ def preprocessing(line):
 
 def load_dataset(path):
     """
-        Building the dataset for individual language
-    
-        path: path to the text
-        language: language label (string)
+        Loading the dataset
+        
+        Input:
+            path: path to the text
+        
+        Output:
+            X: list of lines
+            y: list of labels
     """
     
     X = y = []
@@ -46,7 +51,7 @@ def load_dataset(path):
     with codecs.open(path,"r","utf-8") as filep:
         lines = filep.readlines()
         
-    lines = [preprocessing(line) for line in lines ]
+    lines = [preprocessing(line) for line in lines ] # preprocess the dataset
     X = [line.split("\t")[0] for line in lines]
     y = [line.split("\t")[1] for line in lines]
           

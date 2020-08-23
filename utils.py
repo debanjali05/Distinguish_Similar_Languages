@@ -9,8 +9,6 @@ Implementation of a classification model to distinguish between similar Language
 Constants
 """
 
-import os
-
 #We consider 3 similar languages from the DSL dataset (Croatian - hr, Bosnian - bs and Serbian - sr)
 lang = ["hr", "bs", "sr"]
 
@@ -19,5 +17,4 @@ train_path = "Data/train.txt"
 test_path = "Data/test.txt"
 
 #path to store the model checkpoints 
-path = "checkpoints" 
-checkpoint_path = os.path.join(path,'classifier.pickle')
+checkpoint_path = "checkpoints" 

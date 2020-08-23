@@ -5,9 +5,9 @@ Length of Training set: 54000
         -------Loading Test Set-------
 Length of Test set: 3000
 
-        -------Extracting Features and Splitting Dataset-------
-/anaconda3/lib/python3.6/site-packages/sklearn/feature_extraction/text.py:1089: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+        -------Extracting Features-------/anaconda3/lib/python3.6/site-packages/sklearn/feature_extraction/text.py:1089: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
   if hasattr(X, 'dtype') and np.issubdtype(X.dtype, np.float):
+
 
 Feature Extraction model: TfidfVectorizer(analyzer='char', binary=False, decode_error='strict',
         dtype=<class 'numpy.int64'>, encoding='utf-8', input='content',
@@ -21,26 +21,30 @@ Feature Extraction model: TfidfVectorizer(analyzer='char', binary=False, decode_
 /anaconda3/lib/python3.6/site-packages/sklearn/linear_model/stochastic_gradient.py:84: FutureWarning: max_iter and tol parameters have been added in <class 'sklearn.linear_model.stochastic_gradient.SGDClassifier'> in 0.19. If both are left unset, they default to max_iter=5 and tol=None. If tol is not None, max_iter defaults to max_iter=1000. From 0.21, default max_iter will be 1000, and default tol will be 1e-3.
   "and default tol will be 1e-3." % type(self), FutureWarning)
 
-Classifier Model: VotingClassifier(estimators=[('nb', GaussianNB(priors=None)), ('svm', SGDClassifier(alpha=0.0001, average=False, class_weight=None, epsilon=0.1,
+Ensemble Classifier Model: VotingClassifier(estimators=[('nb', MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True)), ('svm', SGDClassifier(alpha=0.0001, average=False, class_weight=None, epsilon=0.1,
        eta0=0.0, fit_intercept=True, l1_ratio=0.15,
        learning_rate='optimal', loss='log', max_iter=5, n_iter=None,
        n_jobs=1, penalty='l2', power_t=0.5, random_state=None,
        shuffle=True, tol=None, verbose=0, warm_start=False))],
-         flatten_transform=None, n_jobs=1, voting='hard', weights=None)
+         flatten_transform=None, n_jobs=1, voting='soft', weights=None)
 
-Model saved: checkpoints/classifier.pickle
+Model saved: checkpoints/ensemble_classifier.pickle
         -------End Training-------
 
         -------Start Testing------
+
+ Ensemble Classifier:
+/anaconda3/lib/python3.6/site-packages/sklearn/linear_model/base.py:340: RuntimeWarning: overflow encountered in exp
+  np.exp(prob, prob)
 /anaconda3/lib/python3.6/site-packages/sklearn/preprocessing/label.py:151: DeprecationWarning: The truth value of an empty array is ambiguous. Returning False, but in future this will result in an error. Use `array.size > 0` to check that an array is not empty.
   if diff:
-Accuracy : 76.86666666666667
-F1 score : 0.7689002856302162
+Accuracy : 75.5
+F1 score : 0.756209262925487
 
 Confusion Matrix:
-[[725 238  37]
- [142 722 136]
- [ 36 105 859]]
+[[740 232  28]
+ [181 704 115]
+ [ 53 126 821]]
 
 ￼
         -------End Testing------
