@@ -25,7 +25,7 @@ Python 3.6.2 and SciKit Learn 0.19.0
 
 ## Running
 ```bash
-python language_detection
+python language_detection.py
 ```
 ## Output
 | Model   |   Accuracy        |  F1 score |
