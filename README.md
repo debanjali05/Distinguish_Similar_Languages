@@ -2,7 +2,7 @@
 
 Implementation of a method to distinguish between similar languages such as Croatian, Bosnian and Serbian. 
 We implement an ensemble of SVM and Naive Bayes classifiers using a soft voting classifier along with a character level n-gram (2-6) Tfidf Vectorizer as a feature extractor.
-The model predicts the class label based on the argmax of the sums of the predicted probabilities estimated from the 3 classifiers.
+The model predicts the class label based on the argmax of the sums of the predicted probabilities estimated from both the classifiers.
 
 ## Dataset
 DSL Corpus Collection ([here](http://ttg.uni-saarland.de/resources/DSLCC/)) is used for this work. 
