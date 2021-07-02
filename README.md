@@ -21,12 +21,19 @@ python Data/subset_script.py
 Also, update the correct path to the generated dataset (subset of the original dataset) in [utils.py](https://github.com/debanjali05/Distinguish_Similar_Languages/blob/master/utils.py) before running the model. 
 
 ## Requirement
-Python 3.6.2 and SciKit Learn 0.19.0
+- Python 3.7.10
+- SciKit Learn 0.23.2
+- Matplotlib 3.3.2
+- Numpy 1.19.2
+- Pandas 1.1.3
+- Seaborn 0.11.0
+- Sklearn 0.0
 
 ## Running
 ```bash
 python language_detection.py
 ```
+
 ## Output
 | Model   |   Accuracy        |  F1 score |
 |----------|:-------------:|------:|
